@@ -5,33 +5,77 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary-color: #0ea5e9;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --bg-light: #f8fafc;
+    --bg-white: #ffffff;
+    --code-bg: #f1f5f9;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f5f5f5;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 3rem;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-white);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     min-height: 100vh;
 }
 
 header {
     margin-bottom: 3rem;
     padding-bottom: 1.5rem;
-    border-bottom: 2px solid #f0f0f0;
+    border-bottom: 2px solid var(--primary-color);
     text-align: center;
 }
 
-h1 {
+/* Navigation styles */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.main-nav a {
+    text-decoration: none;
     color: #2c3e50;
-    font-size: 2.5rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.main-nav a:hover {
+    background-color: #f0f0f0;
+}
+
+.main-nav a.active {
+    background-color: #2c3e50;
+    color: white;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 3rem;
     margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+}
+
+.tagline {
+    color: var(--text-light);
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
 }
 
 .last-updated {
@@ -41,9 +85,16 @@ h1 {
 }
 
 h2 {
-    color: #34495e;
-    font-size: 1.5rem;
+    color: var(--text-dark);
+    font-size: 2rem;
     margin: 2rem 0 1rem 0;
+    text-align: center;
+}
+
+h3 {
+    color: var(--text-dark);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
 }
 
 .policy-section {
@@ -74,15 +125,201 @@ strong {
     color: #2c3e50;
 }
 
-.contact-info {
+/* Hero section styles */
+.hero-section {
+    text-align: center;
+    padding: 4rem 0;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(14, 165, 233, 0.1));
+    border-radius: 12px;
+    margin-bottom: 4rem;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.button.primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.button.primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.button.secondary {
+    background-color: var(--bg-light);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.button.secondary:hover {
+    background-color: rgba(99, 102, 241, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Features section styles */
+.features-section, .tech-stack {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    padding: 2rem;
+    background-color: var(--bg-white);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: left;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Tech stack specific styles */
+.tech-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tech-list li {
+    padding: 0.5rem 0;
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.tech-list li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Workflow section styles */
+.workflow-section {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.workflow-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.step {
+    padding: 2rem;
+    background-color: var(--bg-light);
+    border-radius: 12px;
+    position: relative;
+}
+
+.step h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Download section styles */
+.download-section {
+    text-align: center;
+    padding: 4rem 0;
     background-color: #f8f9fa;
-    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.download-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.app-store-button,
+.play-store-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
     border-radius: 5px;
-    margin-top: 1rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.app-store-button {
+    background-color: #000;
+}
+
+.play-store-button {
+    background-color: #2c3e50;
+}
+
+.app-store-button:hover,
+.play-store-button:hover {
+    opacity: 0.9;
+}
+
+/* Contact section styles */
+.contact-section {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.contact-info {
+    background-color: var(--code-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+    display: inline-block;
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
 }
 
 .contact-info p {
     margin-bottom: 0;
+    color: var(--text-dark);
 }
 
 /* Responsive design */
@@ -92,15 +329,29 @@ strong {
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     h2 {
-        font-size: 1.3rem;
+        font-size: 2rem;
     }
 
-    .introduction {
-        font-size: 1rem;
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .features-grid, .workflow-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button {
+        width: 100%;
+        text-align: center;
     }
 }
 
@@ -110,6 +361,14 @@ strong {
     }
 
     h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content h2 {
         font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
     }
 }

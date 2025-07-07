@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuotesFrom - Automated Podcast Quote Sharing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>QuotesFrom</h1>
+            <p class="tagline">Turning Podcast Moments into Shareable Quotes</p>
+        </header>
+        <main>
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h2>Automated Podcast Quote Extraction</h2>
+                    <p>QuotesFrom is a powerful Python application that automatically downloads podcasts, transcribes the audio, identifies meaningful quotes, and shares them on Twitter. Built with state-of-the-art AI technology for accurate transcription and quote selection.</p>
+                    <div class="cta-buttons">
+                        <a href="#features" class="button primary">View Features</a>
+                        <a href="#tech-stack" class="button secondary">Tech Stack</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features-section" id="features">
+                <h2>Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Podcast Downloads</h3>
+                        <p>Automatically downloads new podcast episodes using RSS feeds with intelligent duplicate detection.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>AI Transcription</h3>
+                        <p>Uses OpenAI Whisper for accurate speech-to-text conversion and Pyannote.audio for speaker detection.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Smart Processing</h3>
+                        <p>Processes audio in chunks for efficient handling of long episodes and memory management.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Twitter Integration</h3>
+                        <p>Automatically posts extracted quotes as Twitter threads using the Twitter API via Tweepy.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tech-stack" id="tech-stack">
+                <h2>Technology Stack</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Core Dependencies</h3>
+                        <ul class="tech-list">
+                            <li>python-dotenv for environment management</li>
+                            <li>tweepy for Twitter API integration</li>
+                            <li>openai-whisper for speech recognition</li>
+                            <li>pyannote.audio for audio processing</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Audio Processing</h3>
+                        <ul class="tech-list">
+                            <li>pydub for audio manipulation</li>
+                            <li>Advanced chunking algorithms</li>
+                            <li>Efficient memory management</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Feed Processing</h3>
+                        <ul class="tech-list">
+                            <li>feedparser for RSS handling</li>
+                            <li>python-dateutil for time parsing</li>
+                            <li>Intelligent episode tracking</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="workflow-section">
+                <h2>How It Works</h2>
+                <div class="workflow-steps">
+                    <div class="step">
+                        <h3>1. Download</h3>
+                        <p>Monitors RSS feeds for new podcast episodes and downloads them automatically.</p>
+                    </div>
+                    <div class="step">
+                        <h3>2. Process</h3>
+                        <p>Chunks audio files and uses AI to transcribe content and identify speakers.</p>
+                    </div>
+                    <div class="step">
+                        <h3>3. Extract</h3>
+                        <p>Analyzes transcripts to identify meaningful and quotable moments.</p>
+                    </div>
+                    <div class="step">
+                        <h3>4. Share</h3>
+                        <p>Posts selected quotes as engaging Twitter threads with proper attribution.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-section">
+                <h2>Project Information</h2>
+                <div class="contact-info">
+                    <p>A Python-based automated system for sharing podcast highlights on social media.<br>
+                    Built with modern AI and audio processing technologies.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html> 
